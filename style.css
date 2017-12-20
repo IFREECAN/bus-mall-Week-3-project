@@ -1,5 +1,5 @@
-#banana {
-  width: 100px,
-  height: 100px,
-  background-color: yellow
+#banana, #pen, #bathroom  {
+  width: 75px;
+  height: 75px;
+  background-color: red;
 }

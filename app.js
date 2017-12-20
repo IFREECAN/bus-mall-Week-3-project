@@ -26,6 +26,9 @@ function Products(name, filepath) {
 //new Goat('mean goat', 'img/mean-goat.png');
 //console.log(Goat.allGoats);
 
+
+
+
 //********************************************
 //this is the___________with the agruments
 //*******************************************
@@ -43,10 +46,10 @@ new Products('pen', 'img/pen.jpg');
 new Products('pet-sweep', 'img/pet-sweep.jpg');
 new Products('scissors', 'img/scissors.jpg');
 new Products('shark', 'img/shark.jpg');
-new Products('sweep', 'img/sweep.jpg');
+new Products('sweep', 'img/sweep.png');
 new Products('tauntaun', 'img/tauntaun.jpg');
 new Products('unicorn', 'img/unicorn.jpg');
-new Products('usb', 'img/usb.jpg');
+new Products('usb', 'img/usb.gif');
 new Products('water-can', 'img/water-can.jpg');
 new Products('wine-glass', 'img/wine-glass.jpg');
 console.log('Products', Products);
@@ -54,12 +57,10 @@ console.log('Products', Products);
 //****************************************************
 //create function to generate 3-random calcimageclicks
 //****************************************************
-
 //make random #
 function getRandom(min, max){
-  return Math.random() * (max - min) + min;
+  return Math.floor(Math.random() * (max - min) + min);
 };
-
 //grab where each image is located
 var num = getRandom (0, 20);
 var banana = document.getElementById('banana');
@@ -68,16 +69,25 @@ var bathroom = document.getElementById('bathroom');
 
 var randomProducts = Products.allProducts[num];
 
+//use while loop to make sure the same image does not show at the same time.... is not 2-of-the-3
+
+//at 7:43PM can I creat a global variable for all images and setup my while-loop to make say while an image is "True" get another image?
+var allImages = ['bag','bananas', 'bathroom', 'boots', 'breakfast',
+'bubblegum', 'chair', 'cthulu', 'dragon', 'pen', 'pet-sweep','scissors',
+'shark', 'sweep', 'tauntaun', 'unicorn', 'usb', 'water-can', 'wine-glass'];
+
+
+
 function imagesChanger(){
 //Products.allProducts[getRandom()]; //get random# and this #-value will be the value of the images' position.
-
-
-  banana.setAttribute('src', Products.allProducts[num].filepath); //identify banana's filepath, and replace banana with a newer product based on the random # denerated.
+  banana.setAttribute('src', Products.allProducts[getRandom(0,20)].filepath); //identify banana's filepath, and replace banana with a newer product based on the random # denerated.
+  pen.setAttribute('src', Products.allProducts[getRandom(0,20)].filepath);
+  bathroom.setAttribute('src', Products.allProducts[getRandom(0,20)].filepath);
 };
 
-
-
-//imagesChanger();
+imagesChanger(); //image will load when the page opens
 
 //add locations.add event lister (add type of action i.e click, add action i.e. function)
 banana.addEventListener('click', imagesChanger);
+pen.addEventListener('click', imagesChanger);
+bathroom.addEventListener('click', imagesChanger);
