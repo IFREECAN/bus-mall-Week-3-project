@@ -72,5 +72,7 @@ function imagesChanger(){
 };
 //imagesChanger();
 
-//add locations.add event lister (add type of action i.e click, add action i.e. function) 
+//add locations.add event lister (add type of action i.e click, add action i.e. function)
 banana.addEventListener('click', imagesChanger);
+
+testing testing
