@@ -1,22 +1,10 @@
 
 'use strict';
 
-var video = document.getElementById('images');
+var images = [];
+var globalcounter = 0;
 
-//create click-button for html
-var start = document.getElementById('audio-start');
-var pause = document.getElementById('audio-pause');
 
-function handleAudioStart() {
-  video.play();
-}
-
-function handleAudioPause() {
-  video.pause();
-}
-
-start.addEventListener('click', handleAudioStart);
-pause.addEventListener('click', handleAudioPause);
 
 
 //Goat.allGoats = [];....//from class
@@ -28,9 +16,8 @@ Products.allProducts = [];
 function Products(name, filepath) {
   this.name = name;
   this.filepath = filepath;
-  this.calcimageclicks = [];
-  this.calctotalimageclicks = ;
-
+  this.calcimageclicks = 0;
+  this.shown = false; //this is at the very start when no image are shown yet
   Products.allProducts.push(this);
 }
 
@@ -63,3 +50,27 @@ new Products('usb', 'img/usb.jpg');
 new Products('water-can', 'img/water-can.jpg');
 new Products('wine-glass', 'img/wine-glass.jpg');
 console.log(Products, allProducts);
+
+//****************************************************
+//create function to generate 3-random calcimageclicks
+//****************************************************
+
+//make random #
+function getRandom(min, max){
+  return Math.random() * (max - min) + min;
+};
+
+//grab where each image is located
+var banana = document.getElementById('banana');
+var pen = document.getElementById('pen');
+var bathroom = document.getElementById('bathroom');
+
+function imagesChanger(){
+//Products.allProducts[getRandom()]; //get random# and this #-value will be the value of the images' position.
+  banana.src = Products.allProducts[getRandom()].filepath; //identify banana's filepath, and replace banana with a newer product based on the random # denerated.
+
+};
+//imagesChanger();
+
+//add locations.add event lister (add type of action i.e click, add action i.e. function) 
+banana.addEventListener('click', imagesChanger);
