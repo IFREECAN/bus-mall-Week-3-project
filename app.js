@@ -35,7 +35,7 @@ new Products('bathroom', 'img/bathroom.jpg');
 new Products('boots', 'img/boots.jpg');
 new Products('breakfast', 'img/breakfast.jpg');
 new Products('bubblegum', 'img/bubblegum.jpg');
-new Prodcuts('chair', 'img/chair.jpg');
+new Products('chair', 'img/chair.jpg');
 new Products('cthulhu', 'img/cthulu.jpg');
 new Products('dog-duck', 'img/dog-duck.jpg');
 new Products('dragon', 'img/dragon.jpg');
@@ -49,7 +49,7 @@ new Products('unicorn', 'img/unicorn.jpg');
 new Products('usb', 'img/usb.jpg');
 new Products('water-can', 'img/water-can.jpg');
 new Products('wine-glass', 'img/wine-glass.jpg');
-console.log(Products, allProducts);
+console.log('Products', Products);
 
 //****************************************************
 //create function to generate 3-random calcimageclicks
@@ -61,18 +61,23 @@ function getRandom(min, max){
 };
 
 //grab where each image is located
+var num = getRandom (0, 20);
 var banana = document.getElementById('banana');
 var pen = document.getElementById('pen');
 var bathroom = document.getElementById('bathroom');
 
+var randomProducts = Products.allProducts[num];
+
 function imagesChanger(){
 //Products.allProducts[getRandom()]; //get random# and this #-value will be the value of the images' position.
-  banana.src = Products.allProducts[getRandom()].filepath; //identify banana's filepath, and replace banana with a newer product based on the random # denerated.
 
+
+  banana.setAttribute('src', Products.allProducts[num].filepath); //identify banana's filepath, and replace banana with a newer product based on the random # denerated.
 };
+
+
+
 //imagesChanger();
 
 //add locations.add event lister (add type of action i.e click, add action i.e. function)
 banana.addEventListener('click', imagesChanger);
-
-testing testing
