@@ -92,6 +92,9 @@ function getThreeRandom (){
   while (thrNum === frtNum || thrNum === secNum){
     thrNum = getRandom(0, 20);
   }
+
+
+
 };
 
 function imagesChanger(){
@@ -103,21 +106,28 @@ function imagesChanger(){
 };
 imagesChanger(); //image will load when the page opens
 
+
 //12.20.17 creat a function so that the next three images after a click is not any of the previouls three-images
+//function previouImages(){
 
-function previouImages(){
-  previousImgs1 = frtNum;
-  previousImgs2 = secNum;
-  previousImgs3 = thrNum;
 
-  while (previousImgs2 === previousImgs1){
-    previousImgs2 = getRandom(0, 20);
-  }
+var shown = [frtNum, secNum, thrNum];
 
-  while (previousImgs3 === previousImgs1 || previousImgs3 === previousImgs2)
-    previousImgs3 = getRandom(0, 20);
-};
-previouImages();
+shown();
+
+while (shown === 1) {
+  x = getRandom(0, 20);
+
+}
+
+previousImgs1 = frtNum;
+previousImgs2 = secNum;
+previousImgs3 = thrNum;
+
+
+if (imgNew === frtNum || imgNew === secNum || imgNew === thrNum ) {
+  imgNew =
+}
 
 
 
@@ -126,9 +136,6 @@ previouImages();
 img1.addEventListener('click', imagesChanger);
 img2.addEventListener('click', imagesChanger);
 img3.addEventListener('click', imagesChanger);
-
-
-
 
 
 // using the while loop: if event 2===1 perform another evetn; if event 3===1 or event 3===1 perform a different event::
