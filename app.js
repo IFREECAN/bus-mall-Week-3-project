@@ -4,6 +4,10 @@
 var imagesObjects = [];
 var globalcounter = 0;
 
+var shownImages = [frtNum, secNum, thrNum];
+
+var nextImages = [],
+
 //I am declaring these as global variable first and with reassign them later
 var frtNum = 0;
 var secNum = 0;
@@ -93,8 +97,6 @@ function getThreeRandom (){
     thrNum = getRandom(0, 20);
   }
 
-
-
 };
 
 function imagesChanger(){
@@ -104,33 +106,7 @@ function imagesChanger(){
   img2.setAttribute('src',imagesObjects[secNum].filepath);
   img3.setAttribute('src',imagesObjects[thrNum].filepath);
 };
-imagesChanger(); //image will load when the page opens
-
-
-//12.20.17 creat a function so that the next three images after a click is not any of the previouls three-images
-//function previouImages(){
-
-
-var shown = [frtNum, secNum, thrNum];
-
-shown();
-
-while (shown === 1) {
-  x = getRandom(0, 20);
-
-}
-
-previousImgs1 = frtNum;
-previousImgs2 = secNum;
-previousImgs3 = thrNum;
-
-
-if (imgNew === frtNum || imgNew === secNum || imgNew === thrNum ) {
-  imgNew =
-}
-
-
-
+imagesChanger(); //image will load when the page
 
 //add locations.add event lister (add type of action i.e click, add action i.e. function)
 img1.addEventListener('click', imagesChanger);
@@ -138,4 +114,26 @@ img2.addEventListener('click', imagesChanger);
 img3.addEventListener('click', imagesChanger);
 
 
+
+//12.20.17 creat a function so that the next three images after a click is not any of the previouls three-images
+//function previouImages(){}
+
+//I want this function to run after the firt click on the page... and after every click there after....
+// function comparedImages(){
+// for (var i = 0; i < shownImages.length; i++){
+//   if (shownImages[i] === nextImages[i]
+//     getThreeRandom();
+// }
+// };
+//
+// //how to empty out current array.... I want this function to run after a click but before the next images load.
+// function emptyarray (){
+//   shownImages.length = 0;
+// }
+
+
+
+
 // using the while loop: if event 2===1 perform another evetn; if event 3===1 or event 3===1 perform a different event::
+
+//********************************************************************************************************************************************
