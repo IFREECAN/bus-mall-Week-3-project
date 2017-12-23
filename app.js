@@ -18,16 +18,15 @@ var thrNum = 0;
 //fRIDAY: DEC. 22....
 //make next images different from previous images
 function makeNextImages() {
-  nextImages.length = 0 //clear out last images before running the next three
+  nextImages.length = 0; //clear out last images before running the next three
   while (nextImages.length < 3) {
-    console.log('teststring');
     var randomIndex = Math.floor(Math.random() * 20);
     var image = imagesObjects[randomIndex];
     if (image.shown === false){
       nextImages.push(image);
       image.timesShown++;
       image.shown = true;
-      console.log(image)
+      console.log(image);
 
     }
   };
