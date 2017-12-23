@@ -18,14 +18,16 @@ var thrNum = 0;
 //fRIDAY: DEC. 22....
 //make next images different from previous images
 function makeNextImages() {
-  nextImages.lenght = 0 //clear out last images before running the next three
+  nextImages.length = 0 //clear out last images before running the next three
   while (nextImages.length < 3) {
     console.log('teststring');
     var randomIndex = Math.floor(Math.random() * 20);
-    if (imagesObjects[randomIndex].shown === false){
-      var image = imagesObjects[randomIndex];
+    var image = imagesObjects[randomIndex];
+    if (image.shown === false){
       nextImages.push(image);
       image.timesShown++;
+      image.shown = true;
+      console.log(image)
 
     }
   };
@@ -118,11 +120,12 @@ function createsImages() {
 
 function imagesChanger(){
   makeNextImages();
+  console.log('next images', nextImages)
 //Products.allProducts[getRandom()]; //get random# and this #-value will be the value of the images' position.
 //  getThreeRandom(); //this function changes the 3-random#s before we use them in the current/"imagesChanger" funtion.
-  img1.setAttribute('src',imagesObjects[0].filepath); //...
-  img2.setAttribute('src',imagesObjects[1].filepath);
-  img3.setAttribute('src',imagesObjects[3].filepath);
+  img1.setAttribute('src', nextImages[0].filepath); //...
+  img2.setAttribute('src', nextImages[1].filepath);
+  img3.setAttribute('src', nextImages[2].filepath);
 };
 imagesChanger(); //image will load when the page
 
@@ -155,3 +158,8 @@ img3.addEventListener('click', imagesChanger);
 // using the while loop: if event 2===1 perform another evetn; if event 3===1 or event 3===1 perform a different event::
 
 //********************************************************************************************************************************************
+
+
+///12.22.17
+
+//var imagesObjects = []; :: next the smaller images (the three images shown) / in the lager images "imagesObjects" and compare the two arrays
