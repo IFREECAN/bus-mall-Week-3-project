@@ -31,5 +31,22 @@ var createPicturesArray = function() {
   for(var i = 0; i < allStuff.length; i++){
     new imagesConstructor(allStuff[i]);
   }
-
+  console.log('allPictureObjects :: ', allPictureObjects);
 };
+
+//call imagesConstructor to create an array of all objects stored in "allPictureObjects array"
+createPicturesArray();
+
+//create global variables for image IDs.
+var firstLocation = document.getElementById('firstLocation');
+var secondLocation = document.getElementById('secondLocation');
+var thirdLocation = document.getElementById('thirdLocation');
+var ctx = dociment.getElementById ('chartOne', 'chartTwo').getContext('2d');
+
+var randomOne, randomTwo, randomThree;
+
+//show images on page (i.e. DOM)
+var showImages = function(){
+  //get random #s from 0-to-20 for firstLocation
+  randomOne = Math.floor(Math.random() * allImages.length);
+}
