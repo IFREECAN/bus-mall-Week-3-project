@@ -1,5 +1,15 @@
-#img1, #img2, #img3  {
-  width: 85px;
-  height: 85px;
-  background-color: red;
+#img1, #img2, #img3, #img4, #img5, #img6  {
+  width: 250px;
+  height: 250px;
+  background-color: orange;
+  padding: 5px;
+  margin-left: 100px;
+}
+
+h1{
+  font-family: sans-serif;
+}
+
+footer{
+  text-align: center;
 }

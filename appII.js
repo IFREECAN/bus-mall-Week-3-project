@@ -1,9 +1,7 @@
 'use strict';
 
 //create an array of all images
-var allImages = ['bag.jpg','bananas.jpg', 'bathroom.jpg', 'boots.jpg', 'breakfast.jpg',
-'bubblegum.jpg', 'chair.jpg', 'cthulu.jpg', 'dragon.jpg', 'pen.jpg', 'pet-sweep.jpg','scissors.jpg',
-'shark.jpg', 'sweep.png', 'tauntaun.jpg', 'unicorn.jpg', 'usb.gif.jpg', 'water-can.jpg', 'wine-glass.jpg'];
+var allImages = ['bag.jpg','bananas.jpg', 'bathroom.jpg', 'boots.jpg', 'breakfast.jpg','bubblegum.jpg', 'chair.jpg', 'cthulu.jpg', 'dragon.jpg', 'pen.jpg', 'pet-sweep.jpg','scissors.jpg','shark.jpg', 'sweep.png', 'tauntaun.jpg', 'unicorn.jpg', 'usb.gif.jpg', 'water-can.jpg', 'wine-glass.jpg'];
 
 //create an empty array for the objects with data stored in them
 var allPictureObjects = [];
@@ -20,7 +18,7 @@ if (localStorage.list) {
 console.log(list);
 
 //create a CONSTRUCTOR funtion
-function imagesConstructor(filepath){
+function ImagesConstructor(filepath){
   this.name = filepath.split('.')[0];
   this.filepath = 'img' + filepath;
   this.numClicks = 0;
@@ -28,11 +26,10 @@ function imagesConstructor(filepath){
   allPicture.push(this);
 }
 
-
 //create a function for puducts arrays
 var createPicturesArray = function() {
   for(var i = 0; i < allImages.length; i++){
-    new imagesConstructor(allImages[i]);
+    new ImagesConstructor(allImages[i]);
   }
   console.log('allPictureObjects :: ', allPictureObjects);
 };
@@ -57,11 +54,10 @@ var showImages = function(){
   // + firstLocation to numShown globalcounter in allPictureObjects array
   allPictureObjects[randomOne].numShown += 1;
 
-
-//reapeate above step but add logic for secondLocation not= firstLocation thirdLocation
+  //reapeate above step but add logic for secondLocation not= firstLocation thirdLocation
   randomTwo = Math.floor(Math.random() * allImages.length);
   while (randomOne === randomTwo) {
-    randomTwo =  Math.floor(Math.random() * allImages.length);
+    randomTwo = Math.floor(Math.random() * allImages.length);
   };
 
   secondLocation.src = allPictureObjects[randomTwo].filepath;
@@ -72,20 +68,18 @@ var showImages = function(){
   //display secondLocation images & setup to not= firstLocation and thirdLocation
   while (randomOne === randomTwo || randomTwo === randomThree) {
     randomThree = Math.floor(Math.random() * allImages.length);
-}
+  }
 
-thirdLocation.src = allPictureObjects[randomThree].filepath;
-allPictureObjects[randomThree].numShown += 1;
+  thirdLocation.src = allPictureObjects[randomThree].filepath;
+  allPictureObjects[randomThree].numShown += 1;
 
-console.log([randomOne, randomTwo, randomThree]);
+  console.log([randomOne, randomTwo, randomThree]);
 };
 
 //call showImages function
 showImages();
 
-
 //var counter = 0;--- moved to top/ good location for global variables
-
 
 //create event listeners and set agains function
 firstLocation.addEventListener('click', function(){
@@ -157,7 +151,6 @@ var collectData = function() {
     numberOfTimesClicked.push(allPictureObjects[i].numClicks);
   };
 };
-
 //var dataStringified = JSON.stringify(numberOfTimesClicked);
 // var myBarChart = new Chart(ctx, {
 //     type: 'bar',

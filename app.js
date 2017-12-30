@@ -33,15 +33,10 @@ function makeNextImages() {
   console.log(nextImages);
 }
 
-
-
-
-
 //at 7:43PM can I creat a global variable for all images and setup my while-loop to make say while an image is "True" get another image?
 // var allImages = ['bag.jpg','bananas.jpg', 'bathroom.jpg', 'boots.jpg', 'breakfast.jpg',
 // 'bubblegum.jpg', 'chair.jpg', 'cthulu.jpg', 'dragon.jpg', 'pen.jpg', 'pet-sweep.jpg','scissors.jpg',
 // 'shark.jpg', 'sweep.png', 'tauntaun.jpg', 'unicorn.jpg', 'usb.gif.jpg', 'water-can.jpg', 'wine-glass.jpg'];
-
 
 //*************************************
 // CREATE THE CONSTRUCTOR function
@@ -54,7 +49,6 @@ function Products(name, filepath) {
   this.shown = false; //this is at the very start when no image are shown yet
   imagesObjects.push(this); //this places/pushes each imgae into the "imagesObjects" array.
 }
-
 //********************************************
 //this is the___________with the agruments
 //*******************************************
@@ -87,19 +81,19 @@ function createsImages() {
 //create function to generate 3-random numbers
 //****************************************************
 //make random #
- function getRandom(min, max){
-   return Math.floor(Math.random() * (max - min) + min);
- };
- //grab where each image is located
+function getRandom(min, max){
+  return Math.floor(Math.random() * (max - min) + min);
+};
+//grab where each image is located
 var num = getRandom (0, 20);
 //
 // var randomProducts = imagesObjects[num];
 
 //12.20 ---- one function that give me three-random numbers  / reassignment of global variables at the top.
- // function getThreeRandom (){
- //   frtNum = getRandom(0, 20);
- //   secNum = getRandom(0, 20);
- //   thrNum = getRandom(0, 20);
+// function getThreeRandom (){
+//   frtNum = getRandom(0, 20);
+//   secNum = getRandom(0, 20);
+//   thrNum = getRandom(0, 20);
 //
 //   //crate a rule so non of the images/numbers are the same
 //   while (secNum === frtNum){
@@ -119,11 +113,14 @@ var num = getRandom (0, 20);
 function imagesChanger(){
   makeNextImages();
   console.log('next images', nextImages)
-//Products.allProducts[getRandom()]; //get random# and this #-value will be the value of the images' position.
-//  getThreeRandom(); //this function changes the 3-random#s before we use them in the current/"imagesChanger" funtion.
+  //Products.allProducts[getRandom()]; //get random# and this #-value will be the value of the images' position.
+  //  getThreeRandom(); //this function changes the 3-random#s before we use them in the current/"imagesChanger" funtion.
   img1.setAttribute('src', nextImages[0].filepath); //...
   img2.setAttribute('src', nextImages[1].filepath);
   img3.setAttribute('src', nextImages[2].filepath);
+  // img4.setAttribute('src', nextImages[3].filepath);
+  // img5.setAttribute('src', nextImages[4].filepath);
+  // img6.setAttribute('src', nextImages[5].filepath);
 };
 imagesChanger(); //image will load when the page
 
@@ -131,6 +128,9 @@ imagesChanger(); //image will load when the page
 img1.addEventListener('click', imagesChanger);
 img2.addEventListener('click', imagesChanger);
 img3.addEventListener('click', imagesChanger);
+// img4.addEventListener('click', imagesChanger);
+// img5.addEventListener('click', imagesChanger);
+// img6.addEventListener('click', imagesChanger);
 
 
 
