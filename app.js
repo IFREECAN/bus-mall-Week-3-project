@@ -87,20 +87,19 @@ function createsImages() {
 //create function to generate 3-random numbers
 //****************************************************
 //make random #
-// function getRandom(min, max){
-//   return Math.floor(Math.random() * (max - min) + min);
-// };
-// //grab where each image is located
-// var num = getRandom (0, 20);
-//
+ function getRandom(min, max){
+   return Math.floor(Math.random() * (max - min) + min);
+ };
+ //grab where each image is located
+var num = getRandom (0, 20);
 //
 // var randomProducts = imagesObjects[num];
 
 //12.20 ---- one function that give me three-random numbers  / reassignment of global variables at the top.
-// function getThreeRandom (){
-//   frtNum = getRandom(0, 20);
-//   secNum = getRandom(0, 20);
-//   thrNum = getRandom(0, 20);
+ // function getThreeRandom (){
+ //   frtNum = getRandom(0, 20);
+ //   secNum = getRandom(0, 20);
+ //   thrNum = getRandom(0, 20);
 //
 //   //crate a rule so non of the images/numbers are the same
 //   while (secNum === frtNum){
